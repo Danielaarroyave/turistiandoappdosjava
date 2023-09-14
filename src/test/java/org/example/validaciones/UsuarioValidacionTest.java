@@ -5,9 +5,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-
-import static org.junit.jupiter.api.Assertions.*;
-
 class UsuarioValidacionTest {
     //craer un objeto de la clase que quiero probar
 
@@ -70,5 +67,39 @@ class UsuarioValidacionTest {
         Integer ubicacionPrueba= 5;
         Exception respuesta = Assertions.assertThrows(Exception.class, () -> this.validacion.validarUbicacion(ubicacionPrueba));
         Assertions.assertEquals(Mensaje.UBICACION_INVALIDA.getMensaje(), respuesta.getMessage());
+    }
+
+    static class OcasionalValidacionTest {
+        OcasionalValidacion ocasionalValidacion= new OcasionalValidacion();
+
+        private OcasionalValidacion validacion;
+
+        @BeforeEach
+        public  void configurarPruebas(){
+            this.ocasionalValidacion=new OcasionalValidacion();
+            System.out.println("iniciar prueba...");
+        }
+
+        @Test
+        public void validarOcacionaFuncionalCorrecto(){
+            Integer mensualidadPrueba= 10000;
+            Boolean respuesta= Assertions.assertDoesNotThrow(()->this.ocasionalValidacion.validarMensualidad (mensualidadPrueba));
+            Assertions.assertTrue(respuesta);
+        }
+
+        @Test
+        public  void validarOcacionalIncorrectoMontoNegativo(){
+            Integer mensualidadPrueba=-10000;
+            Exception respuesta=Assertions.assertThrows(Exception.class,()->this.ocasionalValidacion.validarMensualidad(mensualidadPrueba));
+            Assertions.assertEquals(Mensaje.VALIDAR_COSTO_PERSONA .getMensaje(),respuesta.getMessage());
+
+        }
+        @Test
+        public void validarOcasionalValorFuncionaIncorrectoPorMonto(){
+            Integer mensualidadPrueba=250000;
+            Exception respuesta=Assertions.assertThrows(Exception.class,()->this.ocasionalValidacion.validarMensualidad(mensualidadPrueba));
+            Assertions.assertEquals(Mensaje.VALIDAR_MONTO_PERSONA .getMensaje(),respuesta.getMessage());
+        }
+
     }
 }

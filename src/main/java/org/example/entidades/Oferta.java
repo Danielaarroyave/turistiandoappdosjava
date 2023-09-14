@@ -1,7 +1,6 @@
 package org.example.entidades;
 
 import org.example.validaciones.OfertaValidacion;
-import org.example.validaciones.UsuarioValidacion;
 
 import java.time.LocalDate;
 
@@ -15,12 +14,12 @@ public class Oferta {
 
     protected OfertaValidacion validacion = new OfertaValidacion();
 
-    private Local local;
+    private Empresa local;
 
     public Oferta() {
     }
 
-    public Oferta(Integer id, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Double costoPersona, Local local) {
+    public Oferta(Integer id, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin, Double costoPersona, Empresa local) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -99,11 +98,11 @@ public class Oferta {
         }
     }
 
-    public Local getLocal() {
+    public Empresa getLocal() {
         return local;
     }
 
-    public void setLocal(Local local) {
+    public void setLocal(Empresa local) {
         this.local = local;
     }
 }

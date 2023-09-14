@@ -14,14 +14,20 @@ public enum Mensaje {
 
     VALIDAR_NOMBRE_EMPRESA("El nombre de la empresa no puede sobrepasar los 30 caracteres"),
 
+    VALIDAR_NOMBRE_REPRESENTANTE("El nombre solo acepta letras y espacios"),
+
+    VALIDAR_NUMERO_CARACTERES_REPRESENTANTE("El numero de caracteres es invalido, minimo debe tener cuatro letras"),
     VALIDAR_TITULO("El titulo de la oferta no puede sobrepasar los 20 caracteres"),
 
     VALIDAR_FECHA_INICIO ("La fecha de inicio no puede ser mayor que la fecha de fin"),
+
+    VALIDAR_NUMERO_CARACTERES_SECRETARIA ("EL NUMERO DE CARACTERES ES INVALIDO"),
 
     VALIDAR_FECHA_FIN ("Ingrese una fecha final  válida (dd/mm/yyyy)"),
 
     VALIDAR_RANGO_FECHA("La fecha de inicio no puede ser mayor que la fecha de fin"),
     VALIDAR_COSTO_PERSONA ("El costo por persona no puede ser negativo"),
+    VALIDAR_MONTO_PERSONA ("El monto no puede ser superior"),
 
 
     FECHA_RESERVA("Ingrese una fecha  válida con el siguiente formato (dd/mm/yyyy)"),

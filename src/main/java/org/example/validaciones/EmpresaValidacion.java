@@ -3,10 +3,10 @@ package org.example.validaciones;
 import org.example.utilidades.Mensaje;
 import org.example.utilidades.Util;
 
-public class LocalValidacion {
+public class EmpresaValidacion {
     protected Util util= new Util();
 
-    public LocalValidacion(){
+    public EmpresaValidacion(){
     }
 
     public boolean validarNit(String nit) throws Exception {

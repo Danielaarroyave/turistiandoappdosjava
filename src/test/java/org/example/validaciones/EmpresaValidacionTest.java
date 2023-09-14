@@ -5,15 +5,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+class EmpresaValidacionTest {
 
-class LocalValidacionTest {
-
-    private LocalValidacion validacion;
+    private EmpresaValidacion validacion;
 
     @BeforeEach
     public  void configuarPruebas() {
-        this.validacion = new LocalValidacion();
+        this.validacion = new EmpresaValidacion();
         System.out.println("inicando prueba...");
     }
     @Test

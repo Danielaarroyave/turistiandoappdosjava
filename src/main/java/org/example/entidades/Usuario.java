@@ -5,7 +5,7 @@ import org.example.validaciones.UsuarioValidacion;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Usuario {
+public abstract class Usuario {
         private Integer id;
         private String documento;
         private String nombres;
@@ -85,4 +85,11 @@ public class Usuario {
                         System.out.println("\u001B[31m"+error.getMessage() +"\u001B[0m");
                 }
         }
+
+
+
+        //como padre declaro que todos mis hijos deben:
+        //1. resgistrarse en plataforma
+
+        public abstract Boolean registrar();
 }
